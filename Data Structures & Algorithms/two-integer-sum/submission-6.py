@@ -1,0 +1,12 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        # from collections import defaultdict
+        # ids = defaultdict(lambda: 0)
+        ids = {}
+
+        for i, n in enumerate(nums):
+            # needed = target - n
+            if target - n in ids:
+                return [ids.get(target - n), i]
+            else:
+                ids[n] = i
